@@ -1,4 +1,5 @@
 import './globals.css'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,7 +9,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className='flex flex-col'>
+          <div className='flex flex-col mt-10'>
+          <div className='flex flex-wrap items-center justify-center gap-10 p-4'>
+            <p className='p-4 border rounded-lg underline'><Link href={'/search'}>Search</Link></p>
+            <p  className='p-4 border rounded-lg underline'><Link href={'/sidebar'}>Sidebar</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/customhook'}>CustomHook</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/calculator'}>Calculator</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/infinitescroll'}>Infinite Scroll</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/skeletonloading'}>Skeleton Loading</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/traffic-light'}>Traffic Light</Link></p>
+            <p className='p-4 border rounded-lg  underline'><Link href={'/tictactoe'}>Tic Tac Toe</Link></p>
+          </div>
+        </div>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

@@ -1,0 +1,34 @@
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(0, 0%, 90%);
+    }
+
+    100% {
+        background-color: hsl(0, 0%, 10%);
+    }
+}
+.testing {
+    .nested {
+        font-weight: bold;
+    }
+    .skeleton {
+        animation-name: skeleton-loading;
+        animation-duration: 3000ms;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-iteration-count: infinite;
+        
+    }
+    .skeletonText {
+        animation-name: skeleton-loading;
+        animation-duration: 3000ms;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-delay: 3000ms;
+        animation-play-state: running;
+        animation-iteration-count: infinite;
+    }
+}
