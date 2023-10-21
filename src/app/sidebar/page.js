@@ -6,11 +6,7 @@ export const FileExplorer = ({files}) => {
     const [id, setId] = useState(null);
 
     const handleClick = (name) => {
-        if(id === name) {
-            setId(null)
-        }else {
-            setId(name);
-        }
+        setId(id === name ? null : name)
     };
 
     if(files.type === 'folder') {

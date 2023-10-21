@@ -6,14 +6,14 @@ const C_CLASS = 'o';
 const X_CLASS = 'x';
 
 const WINNING_COMBINATIONS = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
+    [0, 1, 2], // 3 
+    [3, 4, 5], // 12
+    [6, 7, 8], // 21
+    [0, 3, 6], // 9
+    [1, 4, 7], // 12
+    [2, 5, 8], // 15
+    [0, 4, 8], // 12
+    [2, 4, 6] // 12
   ]
   
 export default function TicTacToe() {
@@ -25,7 +25,7 @@ export default function TicTacToe() {
     const handleClick = (v) => {
         if(!selected[v]){
             const values = [...selected];
-            let currentVal = circleTurn ? 'o' : 'x'
+            let currentVal = circleTurn ? C_CLASS : X_CLASS
             values[v] = currentVal
             setCircleTurn(!circleTurn);
             setSelected([...values]);
@@ -35,7 +35,7 @@ export default function TicTacToe() {
             });
 
             if(gameWon) {
-                setGameWonText(currentVal === 'o' ? 'user1' : 'user2')
+                setGameWonText(currentVal === C_CLASS ? 'user1' : 'user2')
                 return
             }
 
