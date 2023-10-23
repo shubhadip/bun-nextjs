@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "node_modules/react-vite-component-library/dist/style.css"; */
 
 :root {
   --foreground-rgb: 0, 0, 0;

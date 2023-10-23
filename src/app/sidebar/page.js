@@ -2,7 +2,7 @@
 import { Files3, Files2 } from "../utils/constant";
 import { useState } from 'react';
 
-export const FileExplorer = ({files}) => {
+const FileExplorer = ({files}) => {
     const [id, setId] = useState(null);
 
     const handleClick = (name) => {

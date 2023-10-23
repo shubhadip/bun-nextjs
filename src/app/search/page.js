@@ -24,17 +24,17 @@ const Search = () => {
     const [jokes, setJokes] = useState([]);
     const [debouncedTerm, setDebouncedTerm] = useState('');
 
-
-    const debounced = useCallback(debounce((value) => {
+    const debouncedFn = debounce((value) => {
         const fetchData = async (value) => {
             const apiUrl = `https://v2.jokeapi.dev/joke/Any?contains=${value}&amount=4`
             const response = await fetch(apiUrl);
             const values = await response.json()
             setJokes(values.jokes);
-        };
-
+        };    
         fetchData(value)
-    }, 400),[])
+    },400);
+    
+    const debounced = useCallback(debouncedFn,[debouncedFn])
 
 
     useEffect(() => {
